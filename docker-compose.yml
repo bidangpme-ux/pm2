@@ -1,0 +1,39 @@
+name: epmped-bapperida
+
+services:
+  epmped:
+    image: epmped-bapperida:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: epmped-bapperida
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    x-casaos:
+      envs:
+        - container: PORT
+          description:
+            en_us: Port web server aplikasi E-PMPED
+          value: "3000"
+      ports:
+        - container: "3000"
+          description:
+            en_us: Web UI port E-PMPED
+      icon: "https://cdn-icons-png.flaticon.com/512/906/906334.png"
+      title:
+        en_us: E-PMPED Bapperida
+        id_id: E-PMPED Bapperida
+      author: Bapperida Tanggamus
+      category: Office
+      description:
+        en_us: Sistem Elektronik Bidang Perencanaan Makro Pengendalian dan Evaluasi Pembangunan Daerah
+        id_id: Sistem Elektronik Bidang Perencanaan Makro Pengendalian dan Evaluasi Pembangunan Daerah
+      developer: Bapperida Tanggamus
+      index: /
+      port_map: "3000"
+      scheme: http
+      store_cache: false

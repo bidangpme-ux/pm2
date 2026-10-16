@@ -1,0 +1,6 @@
+{
+  "name": "ArsipCloud - Cloud Storage & Manajemen Surat",
+  "description": "Aplikasi cloud storage aman dengan kontrol akses multi-role (Admin, User, Bidang), Folder Publik, Menu Bidang, dan pengarsipan surat dinas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

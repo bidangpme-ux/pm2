@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Ignore HMR WebSocket connection errors as HMR is disabled in AI Studio
+      window.addEventListener('error', function (e) {
+        if (
+          e.message &&
+          (e.message.includes('WebSocket') ||
+            e.message.includes('createWebSocketModuleRunnerTransport') ||
+            e.message.includes('@vite/client'))
+        ) {
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function (e) {
+        var str = String(e.reason || '');
+        if (str.includes('WebSocket') || str.includes('createWebSocketModuleRunnerTransport')) {
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }
+      }, true);
+    </script>
+    <title>E-PMPED Bapperida Tanggamus - Cloud Storage &amp; Manajemen Surat</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='20,50 50,15 80,50' fill='%23e2e8f0'/><path d='M15,25 C15,20 18,18 22,18 C26,18 28,20 28,25 L28,50 C34,44 42,42 50,45 C60,48 64,56 64,66 C64,78 56,88 42,88 C30,88 20,82 16,72 Z' fill='%23f26522'/><circle cx='42' cy='66' r='12' fill='%23111827'/><text x='62' y='64' font-family='Arial Black' font-size='16' font-weight='900' fill='%230f2b82'>AP</text></svg>" />
+    <meta name="description" content="Aplikasi cloud storage aman dengan kontrol akses multi-role (Admin, User, Bidang), Folder Publik, Menu Bidang, dan pengarsipan surat dinas." />
+    <meta property="og:title" content="ArsipCloud - Cloud Storage &amp; Manajemen Surat" />
+    <meta property="og:description" content="Aplikasi cloud storage aman dengan kontrol akses multi-role (Admin, User, Bidang), Folder Publik, Menu Bidang, dan pengarsipan surat dinas." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- PWA Desktop & Mobile Meta Tags -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="E-PMPED" />
+    <link rel="apple-touch-icon" href="/logo.jpg" />
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').catch(function() {});
+        });
+      }
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
